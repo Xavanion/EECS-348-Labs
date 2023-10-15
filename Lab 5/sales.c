@@ -75,16 +75,30 @@ void highLowReport(double sales[], char *months[]){
 }
 
 int main() {
-  double sales[] = {23458.01, 40112.00, 56011.85, 37820.88, 37904.67, 
-                      60200.22, 72400.31, 56210.89, 67230.84, 68233.12, 80950.34, 95225.22};
+    double sales[12];
+    printf("Checking for sales_data.txt\n");
+    FILE *file;
+    file = fopen("sales_data.txt", "r");\
+    if (file == NULL){
+        perror("Error opening file.\n");
+        exit(1);
+    }
+    
+    for (int i = 0; i < 12; i++) {
+            if (fscanf(file, "%lf", &sales[i]) != 1) {
+                printf("Error reading data from file.\n");
+                exit(1);
+            }
+        }
+    fclose(file);
 
-  char *months[] = {"January","February","March","April", "May", "June","July",
-                      "August","September","October","November","December"};
+    char *months[] = {"January","February","March","April", "May", "June","July",
+                        "August","September","October","November","December"};
 
-  monthlySalesReport(sales,months);
-  salesSummary(sales,months);
-  movingAverage(sales, months);
-  highLowReport(sales, months);
-  
-  return 0;
+    monthlySalesReport(sales,months);
+    salesSummary(sales,months);
+    movingAverage(sales, months);
+    highLowReport(sales, months);
+    
+    return 0;
 }
