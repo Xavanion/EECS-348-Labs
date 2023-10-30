@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice One</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .header{
+            width: 100%;
+            height: 20px;
+            background-color: #003459;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .header img{
+            height: 200%;
+            margin-right: 20px;
+        }
+        body{
+            margin: 50px 15px 25px 15px;
+            height: 100vh;
+            width: 100vw;
+            background-color: #dfe5eb;
+            /*border: 5px red solid;*/
+            padding: 5%;
+        }
+        .bodycontent{
+            display: flex;
+        }
+        .bodycontent img{
+            border: 5px gray solid;
+            border-radius: 20%;
+            object-fit: cover;
+            width: 200px;
+            margin-right: 50px;
+        }
+        .video{
+            border: 5px gray solid;
+        }
+        .bodytext{
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="hphoto.png" class="headerphoto">
+        <span class="headertext">Welcome to my profile!</span>
+    </div>
+    <div class="bodycontent">
+        <div class="bodytext">
+            <img src="pfp.jpg" class="bodyphoto">
+            <iframe class ="video" width="560" height="315" src="https://www.youtube.com/embed/R-VRAemIvbI?si=XF9_Im52S8EveDB3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="name">Name: Barrett Brown</div>
+            <div class="contact">Email: barrettbrown2012@gmail.com (<a href="https://github.com/Xavanion" class="github">Github</a>)</sp>
+        </div>
+    </div>
+</body>
+</html>

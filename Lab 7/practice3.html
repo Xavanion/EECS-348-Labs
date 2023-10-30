@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+    <script>
+        function passwordcheck(){
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+            var confirmation = document.getElementById("confirmation");
+
+            if (password1 == password2 && password1.length >= 8){
+                confirmation.innerHTML = "Passwords Match";
+            }
+            else if (password1 == password2 && password1.length < 8){
+                confirmation.innerHTML = "Password needs at least 8 characters";
+            }
+            else{
+                confirmation.innerHTML = "Passwords Don't Match";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="password1">Enter a Password: </label> <br>
+    <input type="text" id="password1" placeholder="Enter Password">
+    <br><br>
+    <label for="password2">Enter a Password: </label> <br>
+    <input type="text" id="password2" placeholder="Confirm Password">
+    <br><br>
+    <button onclick="passwordcheck()"> Submit</button>
+    <p id="confirmation"></p>
+</body>
+</html>
