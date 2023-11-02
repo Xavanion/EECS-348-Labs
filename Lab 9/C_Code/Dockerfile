@@ -3,6 +3,7 @@ FROM gcc:latest
 
 # Copy the C program into the container
 COPY sales.c .
+COPY sales_data.txt .
 
 # Compile the C program
 RUN gcc -o sales sales.c
